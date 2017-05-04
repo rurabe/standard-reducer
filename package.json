@@ -2,9 +2,11 @@
   "name": "standard-reducer",
   "version": "0.1.0",
   "description": "A standard reducer pattern for reducing Immutable collections",
-  "main": "index.js",
+  "main": "dist/standard_reducer.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "babel src --presets babel-preset-latest --out-dir dist",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "redux",
@@ -14,5 +16,15 @@
     "reducer"
   ],
   "author": "Ryan Urabe",
-  "license": "ISC"
+  "homepage": "https://github.com/rurabe/standard-reducer",
+  "repository": "rurabe/standard-reducer",
+  "license": "ISC",
+  "dependencies": {
+    "immutable": "*"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "jest": "^19.0.2"
+  }
 }

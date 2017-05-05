@@ -86,6 +86,21 @@ describe('remove',() => {
       expect(newState.has('1')).toBeFalsy();
       expect(newState.has('2')).toBeFalsy();
       expect(newState.has('3')).toBeFalsy();
-    })
+    });
+
+    test('removes numeric paths',() => {
+      const r = createStandardReducer('widgets');
+      const lastState = Immutable.fromJS({
+        1: { id: 1, name: 'a'},
+        2: { id: 2, name: 'b'},
+        3: { id: 3, name: 'c'},
+        4: { id: 4, name: 'd'},
+        5: { id: 5, name: 'e'},
+      });
+      const action = {type: 'widgets.remove', widgets: [[1],[3]]};
+      const newState = r(lastState,action);
+      expect(newState.has('1')).toBeFalsy();
+      expect(newState.has('3')).toBeFalsy();
+    });
   });
 });

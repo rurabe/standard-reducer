@@ -10,10 +10,5 @@ describe('StandardReducer',() => {
       const r = createStandardReducer('user');
       expect(r(undefined,{type: 'unrelated_resource'})).toBeInstanceOf(Immutable.Map);
     });
-
-    test('accepts data from an initalState',() => {
-      const r = createStandardReducer('user',{id: 9});
-      expect(r(undefined,{type: 'unrelated_resource'})).toEqual(Immutable.fromJS({id: 9}))
-    });
   });
 });

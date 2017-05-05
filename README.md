@@ -74,6 +74,12 @@ These are the three actions that Standard Reducers will respond to. [Actions](ht
   dispatch({type: 'posts.load' posts: {2: {body: 'Hello Mars!'}})
 ```
 
+## Example
+
+```javascript
+
+```
+
 ## Conceptually
 
 The standard actions do not map 1:1 to other concepts like CRUD, but you can do all the same things (and more, since load will let you start over from scratch).
@@ -95,7 +101,7 @@ Eventually they released Flux, which was less of a lib and more of them saying, 
 
 Then came Redux, and they said we're going to have order here. We will have only one store, one tree, that you can chop into reducers. But we will only mutate data through these reducer functions.
 
-But even Redux is not very opnionated about how to store your data, or how to mutate it in your reducers. Standard Reducer is an attempt to build on these ideas to provide a standard, predictable structure and reduce boilerplate.
+But even Redux is not very opinionated about how to store your data, or how to mutate it in your reducers. Standard Reducer is an attempt to build on these ideas to provide a standard, predictable structure and reduce boilerplate.
 
 ## Why did you write this?
 

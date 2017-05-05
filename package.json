@@ -1,7 +1,7 @@
 {
   "name": "standard-reducer",
   "version": "0.1.0",
-  "description": "A standard reducer pattern for reducing Immutable collections",
+  "description": "An opinionated but consistent reducer pattern for organizing data in stores.",
   "main": "dist/standard_reducer.js",
   "scripts": {
     "test": "jest",

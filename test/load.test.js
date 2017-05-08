@@ -1,8 +1,7 @@
 'use strict';
-const Immutable = require('immutable');
+import Immutable from 'immutable';
 
-const StandardReducer = require('../src/standard_reducer');
-const createStandardReducer = StandardReducer.createStandardReducer;
+import { createStandardReducer } from '../src/index';
 
 describe('load',() => {
   describe('flat objects',() => {

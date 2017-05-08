@@ -1,14 +1,11 @@
 'use strict';
-const Immutable = require('immutable');
+import Immutable from 'immutable';
 
-const StandardReducer = require('../src/standard_reducer');
-const createStandardReducer = StandardReducer.createStandardReducer;
+import { createStandardReducer } from '../src/index';
 
-describe('StandardReducer',() => {
-  describe('createStandardReducer',() => {
-    test('gives an inital state of Immutable.Map',() => {
-      const r = createStandardReducer('user');
-      expect(r(undefined,{type: 'unrelated_resource'})).toBeInstanceOf(Immutable.Map);
-    });
+describe('createStandardReducer',() => {
+  test('gives an inital state of Immutable.Map',() => {
+    const r = createStandardReducer('user');
+    expect(r(undefined,{type: 'unrelated_resource'})).toBeInstanceOf(Immutable.Map);
   });
 });

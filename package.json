@@ -2,10 +2,14 @@
   "name": "standard-reducer",
   "version": "0.1.0",
   "description": "An opinionated but consistent reducer pattern for organizing data in stores.",
-  "main": "dist/standard_reducer.js",
+  "main": "dist/index.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
   "scripts": {
     "test": "jest",
-    "build": "babel src --presets babel-preset-latest --out-dir dist",
+    "build:umd": "rollup -i src/index.js -o dist/index.js -f umd -n standard-reducer",
+    "build:es": "rollup -i src/index.js -o es/index.js -f es",
+    "build": "npm run build:umd && npm run build:es",
     "prepublish": "npm run build"
   },
   "keywords": [
@@ -24,7 +28,9 @@
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-jest": "^20.0.0",
     "babel-preset-latest": "^6.24.1",
-    "jest": "^19.0.2"
+    "jest": "^19.0.2",
+    "rollup": "^0.41.6"
   }
 }

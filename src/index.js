@@ -1,11 +1,11 @@
 'use strict';
 
 import { createStandardReducer } from './create_standard_reducer';
-import { dispatchMerge, dispatchRemove, dispatchLoad } from './dispatch_functions';
+import { createMergeAction, createRemoveAction, createLoadAction } from './action_creators';
 
 export {
   createStandardReducer,
-  dispatchMerge,
-  dispatchRemove,
-  dispatchLoad
+  createMergeAction,
+  createRemoveAction,
+  createLoadAction
 };

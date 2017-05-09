@@ -1,6 +1,6 @@
 {
   "name": "standard-reducer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An opinionated but consistent reducer pattern for organizing data in stores.",
   "main": "dist/index.js",
   "module": "es/index.js",

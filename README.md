@@ -4,7 +4,7 @@
 
 ## Why would I use this?
 
-Using the Standard Reducer makes your reducers consistent and predictable, and eliminates boilerplate both in creating your reducers, and dispatching actions. Instead of writing a custom reducer function for each store, just drop a Standard Reducer in and use the standard API. Don't worry, if you have to do something tricky you can always just write a custom reducer instead.
+The Standard Reducer is designed to make your reducers consistent and predictable, and eliminates boilerplate throughout your app. Instead of writing a custom reducer function for each store, just drop a Standard Reducer in and use the standard, predictable, consistent API. Don't worry, if you have to do something tricky you can always just write a custom reducer to handle that edge case.
 
 ```javascript
   combineReducers({
@@ -30,11 +30,9 @@ Using the Standard Reducer makes your reducers consistent and predictable, and e
 ## What opinions?
 1. *Stores should hold their data in Immutable collections* This is more a judgment on the [benefits of Immutable](http://redux.js.org/docs/faq/ImmutableData.html#what-approaches-are-there-for-handling-data-immutably-do-i-have-to-use-immutablejs), but Immutable provides big and easy wins in React apps.
 
-2. *Collections should be stored in Maps with unique ids as the keys* There are two reasons for this. When consuming the tree, it's easier to pick an element out of the collection by a key rather than iterating through a list. When updating the tree, `mergeDeep` cannot reconcile Lists (arrays), so storing collections in maps allows `mergeDeep` to enact changes anywhere in the tree.
+2. *Collections should be stored in Maps, not Lists* There are two reasons for this. When consuming the tree, it's easier to pick an element out of the collection by a key rather than iterating through a list. When updating the tree, `mergeDeep` cannot reconcile Lists (arrays), so storing collections in maps allows `mergeDeep` to enact changes anywhere in the tree.
 
 3. *The store's main job is reflecting persistence layer's source of truth.* Because the store is not the ultimate source of truth, it does not worry about order or race conditions and just applies updates in an effort to stay current. The standard actions are all you need to accomplish this.
-
-
 
 
 ## API
@@ -143,7 +141,9 @@ There is an action creator for each of the standard actions:
   // => { type: 'posts.load', posts: {2: {body: 'Goodnight Moon!'}} }
 ```
 
+## A Note about reading data
 
+Reading data is largely outside the purview of this lib. You should do whatever you want with the state as it's delivered to you. But it is worth noting that storing data in Maps stores them without regard for order. If you data needs to be sorted, it can get expensive to continually keep sorting them for consumption. [Reselect](https://github.com/reactjs/reselect) is a great library for memoizing your data selects, and I highly suggest you use it with this library.
 
 ## Conceptually
 

@@ -38,5 +38,6 @@ jspm_packages
 
 # Dist
 dist
+es
 
 .DS_Store

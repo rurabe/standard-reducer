@@ -24,7 +24,7 @@ The Standard Reducer is designed to make your reducers consistent and predictabl
     }
   }
   
-  export default connect(null,{mergePosts: createMergeActions('posts')})(PostComponent);
+  export default connect(null,{mergePosts: createMergeAction('posts')})(PostComponent);
 ```
 
 ## What opinions?
